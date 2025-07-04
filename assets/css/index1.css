@@ -1,0 +1,312 @@
+  
+    :root {
+      --bg-color: #0f0f1a;
+      --card-bg: #1a1a2e;
+      --text-color: #ffffff;
+      --accent: #72bcd4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    .container {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px;
+      border-bottom: 2px solid white;
+      position: relative;
+      opacity: 0;
+      animation: fadeDown 1s ease forwards;
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 30px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.3s;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #d7d2ff;
+    }
+
+    .hover-note {
+      margin-top: 10px;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-color);
+    }
+
+    .info-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    .info-section h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .info-section p {
+      margin: 4px 0;
+      font-size: 18px;
+    }
+
+    .resume-section {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.7s;
+    }
+
+    .resume-button {
+      background-color: #d7d2ff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .resume-button:hover {
+      background-color: #beb9f2;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+      }
+      .profile-section,
+      .info-section,
+      .resume-section {
+        margin: 15px 0;
+      }
+    }
+
+    /* Sections */
+    section {
+      width: 70%;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+    section:nth-of-type(1) { animation-delay: 1s; }
+    section:nth-of-type(2) { animation-delay: 1.2s; }
+    section:nth-of-type(3) { animation-delay: 1.4s; }
+    section:nth-of-type(4) { animation-delay: 1.6s; }
+    section:nth-of-type(5) { animation-delay: 1.8s; }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #222;
+      padding: 6px 12px;
+      margin: 4px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    /* stagger badges */
+    .badge:nth-child(1) { animation-delay: 1.2s; }
+    .badge:nth-child(2) { animation-delay: 1.3s; }
+    .badge:nth-child(3) { animation-delay: 1.4s; }
+    .badge:nth-child(4) { animation-delay: 1.5s; }
+    .badge:nth-child(5) { animation-delay: 1.6s; }
+    .badge:nth-child(6) { animation-delay: 1.7s; }
+    .badge:nth-child(7) { animation-delay: 1.8s; }
+    .badge:nth-child(8) { animation-delay: 1.9s; }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Projects & Achievements */
+    .project-card,
+    .achievement-card {
+      background-color: var(--card-bg);
+      padding: 1rem;
+      border-radius: 12px;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: zoomIn 0.6s ease forwards;
+    }
+    .project-card:nth-child(1),
+    .achievement-card:nth-child(1) { animation-delay: 1.4s; }
+    .project-card:nth-child(2),
+    .achievement-card:nth-child(2) { animation-delay: 1.6s; }
+    .project-card:nth-child(3),
+    .achievement-card:nth-child(3) { animation-delay: 1.8s; }
+
+    .project-card:hover,
+    .achievement-card:hover{
+          box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 0 12px #72bcd4,
+    0 0 18px rgba(114, 188, 212, 0.4);
+    }
+
+    .project-card img,
+    .achievement-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .more-link {
+      color: white;
+      border: 2px solid white;
+      text-decoration: none;
+      padding: 5px 10px;
+      margin-top: 15px;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 2s;
+    }
+    .more-link:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .connect ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .connect a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 2.2s;
+    }
+    .connect a:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    /* layout */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+/* base badge styling */
+.tech-badge {
+  background-color: #222;
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+/* hover color shift */
+.tech-badge:hover {
+  background-color: var(--accent);
+  color: var(--bg-color);
+  animation: jelly 0.6s ease;
+}
+
+/* “jelly” keyframes */
+@keyframes jelly {
+  0%, 100% { transform: scale(1,1); }
+  25%      { transform: scale(1.2,0.8); }
+  50%      { transform: scale(0.8,1.2); }
+  75%      { transform: scale(1.1,0.9); }
+}
+
+    @media (min-width: 768px) {
+      .project-grid,
+      .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+    @media (min-width: 1024px) {
+      .project-grid,
+      .achievement-grid {
+        grid-template-columns: repeat(3, 1fr);
+        
+      }
+      
+    }
+@media (max-width: 768px) {
+
+  .project-card p,.achievement-card p {
+  max-height: 100px;
+  overflow-y: auto;
+}
+}
+    /* Keyframes */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  
